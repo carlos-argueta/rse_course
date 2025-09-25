@@ -1,1 +1,0 @@
-/home/carlos/rse_course/ros2_ws/src/rse_shl1_description/launch/tp2.launch.py
