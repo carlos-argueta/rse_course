@@ -1,0 +1,1 @@
+/home/carlos/rse_course/ros2_ws/build/rse_shl1_description/ament_cmake_environment_hooks/local_setup.sh
