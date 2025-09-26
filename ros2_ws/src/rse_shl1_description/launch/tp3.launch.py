@@ -12,7 +12,7 @@ import os
 def generate_launch_description():
 
     # Get the path to your .xacro file
-    xacro_file = os.path.join(get_package_share_directory('rse_shl1_description'), 'xacro', 'tutorial_part3.xacro')
+    xacro_file = os.path.join(get_package_share_directory('rse_shl1_description'), 'urdf', 'tutorial_part3.urdf.xacro')
 
     # Process the xacro file to get the URDF XML as a string
     robot_description_config = xacro.process_file(xacro_file)

@@ -1,0 +1,1 @@
+export IGN_GAZEBO_RESOURCE_PATH=$IGN_GAZEBO_RESOURCE_PATH:$HOME/rse_course/ros2_ws/install/rse_shl1_description/share
