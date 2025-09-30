@@ -22,18 +22,17 @@ def generate_launch_description():
         ]
     )
     
-    # Launch Ignition Fortress (via ros_gz_sim)
-    # Launch Gazebo, passing in a specific world file
+    # Launch Ignition Fortress (via ros_gz_sim), passing in a specific world file
     ign_gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution([
             FindPackageShare('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
         ])),
         launch_arguments={
-            'gz_args': '-r shapes.sdf'
+             'gz_args': '-r empty.sdf' # "https://fuel.gazebosim.org/1.0/MovAi/worlds/tugbot_depot"
         }.items()
     )
 
-    # Launch RViz + robot_state_publisher + joint GUI from your existing file
+    # Launch RViz + robot_state_publisher + joint GUI from the existing file
     description_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution([
             FindPackageShare('rse_shl1_description'), 'launch', 'display.launch.py'
@@ -46,19 +45,17 @@ def generate_launch_description():
         executable='create',
         name='spawn_entity',
         arguments=[
-            '-name', 'robot',
+            '-name', 'SHL-1',
             '-topic', 'robot_description',
             '-x', '2.0',   # Set the X coordinate (e.g., 2.0 meters)
             '-y', '-1.5',  # Set the Y coordinate (e.g., -1.5 meters)
-            '-z', '0.5',   # Keep the Z coordinate
+            '-z', '2.5',   # Set the Z coordinate (e.g., 0.5 meters)
         ],
         output='screen',
     )
 
     return LaunchDescription([
-        # --- Add the new action here ---
         gz_resource_path,
-        # --- End Add ---
         ign_gazebo,
         description_launch,
         spawn_entity,
