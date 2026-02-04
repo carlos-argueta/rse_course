@@ -4,3 +4,6 @@
 [submodule "ros2_ws/src/topic_based_ros2_control"]
 	path = ros2_ws/src/topic_based_ros2_control
 	url = https://github.com/PickNikRobotics/topic_based_ros2_control.git
+[submodule "module_3/zed-isaac-sim"]
+	path = module_3/zed-isaac-sim
+	url = https://github.com/stereolabs/zed-isaac-sim.git
