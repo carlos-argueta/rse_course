@@ -214,3 +214,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ZED dependencies
+/module_3/zed-isaac-sim/
+/ros2_ws/src/zed-ros2-wrapper/
